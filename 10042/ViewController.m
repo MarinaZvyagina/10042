@@ -50,7 +50,7 @@
     
     [self.view addSubview:self.tableView];
  
-    _timer = [NSTimer scheduledTimerWithTimeInterval:5 target:[NSBlockOperation blockOperationWithBlock:^{
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:5 target:[NSBlockOperation blockOperationWithBlock:^{
         self.animals = [self getMeat];
         [self.timer invalidate];
         [self.tableView reloadData];
