@@ -32,8 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
-    
-    //UITableView * tableView = [UITableView new];
+
     [self createModel];
     self.tableView = [UITableView new];
     
@@ -44,13 +43,9 @@
     
     self.tableView.tableFooterView = [UIView new];
     
-    //self.tableView = [UITableView new];
-    
-    
-    
     [self.view addSubview:self.tableView];
  
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:5 target:[NSBlockOperation blockOperationWithBlock:^{
+    _timer = [NSTimer scheduledTimerWithTimeInterval:5 target:[NSBlockOperation blockOperationWithBlock:^{
         self.animals = [self getMeat];
         [self.timer invalidate];
         [self.tableView reloadData];
